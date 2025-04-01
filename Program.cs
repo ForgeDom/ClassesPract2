@@ -5,30 +5,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        Subhelper employee1 = new Subhelper("Employee1", "2020-01-01", "1234567890", "my@gmail.com", "Manager", "Manage", 1000);
-        Subhelper employee2 = new Subhelper("Employee2", "2021-01-01", "0987654321", "his@gmail.com", "Boss", "Shout", 2000);
+        Matrix matrix1 = new Matrix(2, 2);
+        matrix1.Input(2, 2, 1, 5);
+        matrix1.Display();
 
-        Console.WriteLine("Employee 1:");
-        employee1.Display();
-        Console.WriteLine("Employee 2:");
-        employee2.Display();
-        
-        Console.WriteLine("Enter the amount to add to Employee 1's salary:");
-        int amountToAdd = int.Parse(Console.ReadLine());
-        employee1.Salary += amountToAdd;
-        Console.WriteLine("Employee 1's salary after addition:");
-        employee1.Display();
-        Console.WriteLine("Enter the amount to subtract from Employee 1's salary:");
-        int amountToSubtract = int.Parse(Console.ReadLine());
-        employee1.Salary -= amountToSubtract;
-        Console.WriteLine("Employee 1's salary after subtraction:");
-        employee1.Display();
-        Console.WriteLine("Incrementing Employee 1's salary:");
-        employee1.Salary++;
-        employee1.Display();
-        Console.WriteLine("Decrementing Employee 1's salary:");
-        employee1.Salary--;
-        employee1.Display();
+        Matrix matrix2 = new Matrix(2, 2);
+        matrix2.Input(2, 2, 1, 5);
+        matrix2.Display();
+
+        Matrix sum = matrix1 + matrix2;
+        Console.WriteLine("Sum of matrices:");
+        sum.Display();
+
+        Matrix difference = matrix1 - matrix2;
+        Console.WriteLine("Difference of matrices:");
+        difference.Display();
+
+        Matrix product = matrix1 * matrix2;
+        Console.WriteLine("Product of matrices:");
+        product.Display();
+
+        Matrix scalarProduct = matrix1 * 2;
+        Console.WriteLine("Matrix multiplied by scalar:");
+        scalarProduct.Display();
+
+        bool areEqual = matrix1 == matrix2;
+        Console.WriteLine($"Matrices are equal: {areEqual}");
+
+        bool areNotEqual = matrix1 != matrix2;
+        Console.WriteLine($"Matrices are not equal: {areNotEqual}");
         
     }
 }
