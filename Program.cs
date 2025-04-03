@@ -5,23 +5,33 @@ class Program
 {
     static void Main(string[] args)
     {
-        City city1 = new City("CityA", "CountryA", 100000, "CodeA", new string[] { "District1", "District2" });
-        City city2 = new City("CityB", "CountryB", 150000, "CodeB", new string[] { "District3", "District4" });
+        try
+        {
+            CreditCard card1 = new CreditCard("1234567890123456", "John Doe", "123", "12/23", 1000);
+            CreditCard card2 = new CreditCard("6543210987654321", "Jane Smith", "321", "11/24", 2000);
 
-        Console.WriteLine("City 1 information:");
-        city1.DisplayData();
-        Console.WriteLine("\nCity 2 information:");
-        city2.DisplayData();
+            Console.WriteLine("Card 1 information:");
+            Console.WriteLine(card1);
+            Console.WriteLine("\nCard 2 information:");
+            Console.WriteLine(card2);
 
-        Console.WriteLine("\nAdding 5000 to City 1 population:");
-        city1 += 5000;
-        city1.DisplayData();
+            Console.WriteLine("\nAdding 500 to Card 1:");
+            card1 += 500;
+            Console.WriteLine(card1);
 
-        Console.WriteLine("\nSubtracting 3000 from City 2 population:");
-        city2 -= 3000;
-        city2.DisplayData();
+            Console.WriteLine("\nSubtracting 300 from Card 2:");
+            card2 -= 300;
+            Console.WriteLine(card2);
 
-        Console.WriteLine($"\nCity 1 == City 2: {city1 == city2}");
-        Console.WriteLine($"City 1 != City 2: {city1 != city2}");
+            Console.WriteLine($"\nCard 1 == Card 2: {card1 == card2}");
+            Console.WriteLine($"Card 1 != Card 2: {card1 != card2}");
+            Console.WriteLine($"Card 1 < Card 2: {card1 < card2}");
+            Console.WriteLine($"Card 1 > Card 2: {card1 > card2}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
